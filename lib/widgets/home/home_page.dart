@@ -1,5 +1,6 @@
 import 'package:electrical_store/constants.dart';
 import 'package:electrical_store/models/product.dart';
+import 'package:electrical_store/screens/details_screen.dart';
 import 'package:electrical_store/widgets/home/product_card.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +33,13 @@ class HomeBody extends StatelessWidget {
                     product: products[index],
                     itemId: index,
                     press: () {
-                      print('press success');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              DetailsScreen(product: products[index]),
+                        ),
+                      );
                     },
                   ),
                 ),
